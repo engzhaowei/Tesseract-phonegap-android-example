@@ -1,0 +1,51 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+           id="com.tesseract.phonegap.tesseractPlugin"
+      version="0.1.0">
+    <name>TesseractPlugin</name>
+    <description>Tesseract plugin for phonegap</description>
+    <license>Apache 2.0 License</license>
+    <keywords>phonegap,tesseract, plugin</keywords>
+ 
+	<!-- Js-module tag, prevents to add <script> tag for each file -->
+    <js-module src="www/tesseractPlugin.js" name="TesseractPlugin">
+        <clobbers target="window.TesseractPlugin" />
+    </js-module>
+ 
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="TesseractPlugin">
+                <param name="android-package" value="com.tesseract.phonegap.TesseractPlugin"/>
+            </feature>			
+        </config-file>
+		
+		<!-- Source files neccesarry to run the tesseract engine -->
+        <source-file src="src/android/TesseractPlugin.java" target-dir="src/com/tesseract/phonegap/" />  
+		<source-file src="src/android/PageIterator.java" target-dir="src/com/googlecode/tesseract/android" />  
+		<source-file src="src/android/ResultIterator.java" target-dir="src/com/googlecode/tesseract/android" />  
+		<source-file src="src/android/TessBaseAPI.java" target-dir="src/com/googlecode/tesseract/android" />  
+		<source-file src="src/android/AdaptiveMap.java" target-dir="src/com/googlecode/leptonica/android" />  
+		<source-file src="src/android/Binarize.java" target-dir="src/com/googlecode/leptonica/android" />
+		<source-file src="src/android/Box.java" target-dir="src/com/googlecode/leptonica/android" />  
+		<source-file src="src/android/Constants.java" target-dir="src/com/googlecode/leptonica/android" />  
+		<source-file src="src/android/Convert.java" target-dir="src/com/googlecode/leptonica/android" />   
+		<source-file src="src/android/Enhance.java" target-dir="src/com/googlecode/leptonica/android" /> 
+		<source-file src="src/android/JpegIO.java" target-dir="src/com/googlecode/leptonica/android" />  
+		<source-file src="src/android/Pix.java" target-dir="src/com/googlecode/leptonica/android" />  
+		<source-file src="src/android/Pixa.java" target-dir="src/com/googlecode/leptonica/android" />  
+		<source-file src="src/android/ReadFile.java" target-dir="src/com/googlecode/leptonica/android" />  
+		<source-file src="src/android/Rotate.java" target-dir="src/com/googlecode/leptonica/android" />  
+		<source-file src="src/android/Scale.java" target-dir="src/com/googlecode/leptonica/android" />  
+		<source-file src="src/android/Skew.java" target-dir="src/com/googlecode/leptonica/android" />  
+		<source-file src="src/android/WriteFile.java" target-dir="src/com/googlecode/leptonica/android" /> 		
+     </platform> 
+	 
+	 <!-- Files to be manually added -->
+	 <!--com.tesseract.phonegap.tesseractPlugin\libs too ProjectFolder\platforms\android --> 
+	 
+
+	 
+</plugin>
